@@ -1,0 +1,13 @@
+<h1> Closest points calculator </h1>
+<hr />
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ points_form }}
+    <input type="submit" name="Submit" value="Calculate" />
+</form>
+<hr />
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
